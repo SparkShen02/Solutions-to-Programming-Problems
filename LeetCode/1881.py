@@ -15,3 +15,4 @@ class Solution:
                 if int(n[i]) > x:
                     return n[:i] + str(x) + n[i:]
             return n + str(x)
+
