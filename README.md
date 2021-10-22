@@ -5,11 +5,11 @@ The LeetCode solutions are the most recent, and each of them has a block of comm
 ### Summary
 | Website  | Number of Solutions |
 | ------------- | ------------- |
-| [LeetCode](https://leetcode-cn.com/) | 117 |
+| [LeetCode](https://leetcode-cn.com/) | 118 |
 | [USACO](http://www.usaco.org/) | 41 |
 | [LintCode](https://www.lintcode.com/) | 40 | 
 | [CCC](https://cemc.uwaterloo.ca/contests/computing.html) | 18 | 
 | [UVa](https://onlinejudge.org/) | 8 | 
 | [SPOJ](https://www.spoj.com/) | 5 | 
 | [Codeforces](https://codeforces.com/) | 2 |
-| Total | 231 |
+| Total | 232 |
