@@ -12,7 +12,7 @@ class Solution:
         start, end = 0, 1
         occ = set(s[0])
         ans = 0
-        while start < n and end < n:            
+        while end < n:            
             while end < n and s[end] not in occ:
                 occ.add(s[end])
                 end += 1
