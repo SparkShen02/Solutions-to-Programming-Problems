@@ -11,7 +11,7 @@ public:
 
         int n = 0;  
         for (int i = 1; i < nums.size(); i++) {
-            if (nums[i] != nums[i-1]) {
+            if (nums[i] != nums[n]) {
                 nums[n+1] = nums[i]; 
                 n += 1;
             }
