@@ -1,7 +1,7 @@
 class Solution {
 public:
     /*
-    f[i] represents the largest sum of any subarray that ends at position i. f[i] = max(f[i], f[i] + f[i-1]). The largest of f[i] is the largest sum of any subarray. 
+    f[i] represents the largest sum of any subarray that ends at position i. f[i] = max(f[i], nums[i] + f[i-1]). The largest of f[i] is the largest sum of any subarray. 
     Time complexity: O(n), Space complexity: O(1). 
     */
     int maxSubArray(vector<int>& nums) {
