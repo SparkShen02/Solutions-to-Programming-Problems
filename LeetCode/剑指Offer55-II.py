@@ -9,14 +9,12 @@ class Solution:
     Recursion. height(node) = max(height(node.left), height(node.right)) + 1.
     Time complexity: O(n), Space complexity: O(height) (from recursion calls). 
     '''
-    ans = True
     def isBalanced(self, root: TreeNode) -> bool:
         def height(node):
             if node == None:
                 return 0
             l, r = height(node.left), height(node.right)
-            if abs(l-r) > 1:
-                self.ans = False
+            if l == -1 or r == -1 or abs(l-r) > 1:
+                return -1
             return max(l, r) + 1
-        height(root)
-        return self.ans
+        return False if height(root) == -1 else True
