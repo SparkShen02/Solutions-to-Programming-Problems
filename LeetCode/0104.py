@@ -10,9 +10,7 @@ class Solution:
     Time complexity: O(n), Space complexity: O(height) (from recursion calls). 
     '''
     def maxDepth(self, root: TreeNode) -> int:
-        def helper(node):
-            if node == None:
-                return 0
-            else:
-                return 1 + max(helper(node.left), helper(node.right))
-        return helper(root)
+        if root == None:
+            return 0
+        else:
+            return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
