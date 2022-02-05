@@ -1,25 +1,25 @@
 class Solution:
     '''
-    Repeatedly compare the numbers in the two arrays and copy the smaller one to the merged array.
-    Time complexity: O(n), Space complexity: O(n). 
+    In order to merge the arrays in-place, repeatedly compare the numbers at the end of the two arrays and place the larger one to the end (extra space) of nums1. 
+    Time complexity: O(n), Space complexity: O(1). 
     '''
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        merged = []
-        cur1, cur2 = 0, 0
-        while cur1 < m and cur2 < n:
-            if nums1[cur1] <= nums2[cur2]:
-                merged.append(nums1[cur1])
-                cur1 += 1
-            elif nums1[cur1] > nums2[cur2]:
-                merged.append(nums2[cur2])
-                cur2 += 1
-
-        if cur1 < m:
-            merged += nums1[cur1:m]
-        elif cur2 < n:
-            merged += nums2[cur2:]
-        
-        nums1[:] = merged
+        p1, p2 = m - 1, n - 1
+        beforeMerged = m + n - 1 # points before the merged array
+        while p1 >= 0 and p2 >= 0:
+            num1, num2 = nums1[p1], nums2[p2]
+            if num1 > num2:
+                nums1[beforeMerged] = num1
+                p1 -= 1
+            else:
+                nums1[beforeMerged] = num2
+                p2 -= 1
+            beforeMerged -= 1
+        for i in range(p2, -1, -1): # merge the remaining numbers in nums2
+            nums1[beforeMerged] = nums2[p2]
+            p2 -= 1
+            beforeMerged -= 1
+        return nums1
