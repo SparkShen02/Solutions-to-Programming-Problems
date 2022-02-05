@@ -10,7 +10,6 @@ class Solution:
     Time complexity: O(n), Space complexity: O(height). 
     '''
     def postorderTraversal(self, node: TreeNode) -> List[int]:
-        ans = []
         if node == None:
-            return ans
+            return []
         return self.postorderTraversal(node.left) + self.postorderTraversal(node.right) + [node.val]
