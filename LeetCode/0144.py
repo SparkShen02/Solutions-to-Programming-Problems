@@ -10,7 +10,6 @@ class Solution:
     Time complexity: O(n), Space complexity: O(height) (from recursion calls). 
     '''
     def preorderTraversal(self, node: TreeNode) -> List[int]:
-        ans = []
         if node == None:
-            return ans
+            return []
         return [node.val] + self.preorderTraversal(node.left) + self.preorderTraversal(node.right)
