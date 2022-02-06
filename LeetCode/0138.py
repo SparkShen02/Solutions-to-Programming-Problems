@@ -9,7 +9,7 @@ class Node:
 
 class Solution:
     '''
-    For each original node, copy a new code to its right. Then, copy the random pointers. Lastly, detach the original and the new linked list. 
+    For each original node, copy a new node to its right. Then, copy the random pointers. Lastly, detach the original and the new linked list. 
     Time complexity: O(n), Space complexity: O(n) (the resulting list). 
     '''
     def copyRandomList(self, head: 'Node') -> 'Node':
@@ -44,5 +44,3 @@ class Solution:
             cur = cur.next
         
         return newHead
-            
-
