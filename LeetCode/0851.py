@@ -15,8 +15,7 @@ class Solution:
                 return answer
             curAns = node
             for child in node2Children[node]:
-                if answer[child] == None:
-                    answer = calAnswer(child, answer)
+                answer = calAnswer(child, answer)
                 if quiet[answer[child]] < quiet[curAns]:
                     curAns = answer[child]
             answer[node] = curAns
