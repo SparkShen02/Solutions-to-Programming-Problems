@@ -24,7 +24,6 @@ class Solution:
                 cur = q.get()
                 if cur == None:
                     hasNone = True
-                    q.put(None)
                 else:
                     if hasNone:
                         return False
@@ -37,5 +36,3 @@ class Solution:
                 return False
             if isLast:
                 return True
-
-
