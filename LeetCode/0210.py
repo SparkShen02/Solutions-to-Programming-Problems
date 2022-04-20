@@ -29,8 +29,7 @@ class Solution:
                     s.append(nextCourse)
         
         # Check for cycle
-        for num in numInEdges:
-            if num != 0:
-                return []
+        if len(order) != numCourses:
+            return []
 
         return order
