@@ -7,8 +7,10 @@ class Solution:
     '''
     Divide and conquer. 
     mergeKLists(lists):
-        Respectively merge lists[0] with lists[1], lists[2] with lists[3], ..., and save the merged lists in-place in lists
-        mergeKLists(lists)
+        Divide all the lists into two halves
+        Merge the first half of lists into one (by calling mergeKLists())
+        Merge the right half of lists into one (by calling mergeKLists())
+        Merge the two lists we got
     Time complexity: O(knlog(k)), Space complexity: O(log(k)) (from recursion calls) where k is the # of linked lists and n is the max length of a linked list. 
     '''
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
@@ -18,14 +20,10 @@ class Solution:
         def helper(lists, start, end):
             if start == end:
                 return lists[start]
-            merged = start # points after the end of the merged lists
-            for i in range(start, end, 2):
-                lists[merged] = self.mergeTwoLists(lists[i], lists[i+1])
-                merged += 1
-            if (end-start+1) % 2 != 0: # the last linked list is not paired and merged
-                lists[merged] = lists[end]
-                merged += 1
-            return helper(lists, start, merged-1)
+            mid = (start+end) // 2
+            leftList = helper(lists, start, mid)
+            rightList = helper(lists, mid+1, end)
+            return self.mergeTwoLists(leftList, rightList)
         return helper(lists, 0, len(lists)-1)
 
     '''
